@@ -60,7 +60,7 @@ class CostTest {
                         .getJSONObject(code)
                         .getJSONObject("1")
                         .getString("price").toInt()
-                assertEquals(17000, ticketPrice)
+                assertEquals(15000, ticketPrice)
             } catch (e: java.lang.Exception) {
                 Assert.fail("Exception")
             }
