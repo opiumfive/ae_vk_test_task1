@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
     internal var mAccount: Account? = null
     private val geoApi = GeolocationApi.create()
     var askedPermission = false
-    private val visionApi: IVisionApi = VisionApiMocked()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -207,7 +206,7 @@ class MainActivity : AppCompatActivity() {
                 )
                 Constants.PICKED_BITMAP = bitmap
                 val token = AppPreferences.getToken(applicationContext)
-                visionApi.findLocation(
+                VisionApi.findLocation(
                     bitmap,
                     token,
                     object : OnVisionApiListener {

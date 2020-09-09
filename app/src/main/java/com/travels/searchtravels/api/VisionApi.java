@@ -25,8 +25,8 @@ import java.util.List;
 
 import static com.travels.searchtravels.utils.ImageHelper.getBase64EncodedJpeg;
 
-public class VisionApi implements IVisionApi {
-    public void findLocation(Bitmap bitmap, String token, OnVisionApiListener onVisionApiListener){
+public class VisionApi {
+    public static void findLocation(Bitmap bitmap, String token, OnVisionApiListener onVisionApiListener){
         Handler handler = new Handler(Looper.getMainLooper());
         Thread thread = new Thread(new Runnable() {
             @Override

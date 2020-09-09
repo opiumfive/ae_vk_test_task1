@@ -4,11 +4,11 @@ import android.graphics.Bitmap;
 import com.google.api.services.vision.v1.model.LatLng;
 import java.util.Random;
 
-public class VisionApiMocked implements IVisionApi {
+public class VisionApiMocked {
 
-    private Random r = new Random();
+    private static Random r = new Random();
 
-    public void findLocation(Bitmap bitmap, String token, OnVisionApiListener onVisionApiListener) {
+    public static void findLocation(Bitmap bitmap, String token, OnVisionApiListener onVisionApiListener) {
 
         int responseVariantsCounter = r.nextInt() % 10;
 
@@ -33,14 +33,14 @@ public class VisionApiMocked implements IVisionApi {
         }
     }
 
-    private LatLng getRandomCoords() {
+    private static LatLng getRandomCoords() {
         LatLng coords = new LatLng();
         coords.setLatitude((r.nextDouble() * -180.0) + 90.0);
         coords.setLongitude((r.nextDouble() * -360.0) + 180.0);
         return coords;
     }
 
-    public LatLng getRandomCoordsInFrance() {
+    public static LatLng getRandomCoordsInFrance() {
         double x0 = 46.25;
         double y0 = 2.1;
         int radius = 450000;
